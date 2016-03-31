@@ -60,6 +60,12 @@ $(function() {
     xml3d.appendChild(view.get(0));
     xml3d.setAttribute("view", "#v_pview");
 
+    $("xml3d").on("load", function(e) {
+        var bbox = e.target.getWorldBoundingBox();
+        DemoCamera.lookAt(bbox.center(), bbox.size().length() * 0.75);
+        DemoCamera.examinePoint = bbox.center();
+    })
+
     var transform = document.getElementById("v_pview");
 	var DemoCamera = new XML3D.StandardCamera(transform, {mode:"examine"});
     DemoCamera.translate(XML3D.Vec3([0,0,10]));

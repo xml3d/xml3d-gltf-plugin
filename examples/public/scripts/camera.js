@@ -106,8 +106,8 @@
      *
      * @param {XML3D.Vec3} point
      */
-    XML3D.StandardCamera.prototype.lookAt = function(point) {
-        this.transformInterface.lookAt(point);
+    XML3D.StandardCamera.prototype.lookAt = function(point, distance) {
+        this.transformInterface.lookAt(point, distance);
     };
 
     /**
@@ -613,7 +613,7 @@
         return vec.mul(this.orientation);
     };
 
-    TransformInterface.prototype.lookAt = function(point) {
+    TransformInterface.prototype.lookAt = function(point, distance) {
         var dir = point.sub(this.position).normalize();
         var up = new XML3D.Vec3(0,1,0);
         var orientation = this.orientation;
@@ -624,5 +624,11 @@
         var basisY = basisX.clone().cross(dir);
         var basisZ = new XML3D.Vec3(dir).negate();
         this.orientation = XML3D.Quat.fromBasis(basisX, basisY, basisZ);
+
+        if (distance !== undefined) {
+            console.log(distance, basisZ);
+            var pointToPos = basisZ.scale(distance);
+            this.position = point.add(pointToPos);
+        }
     };
 })();
