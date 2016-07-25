@@ -1,6 +1,6 @@
 # xml3d-gltf-plugin [![License](https://img.shields.io/npm/l/gltf-walker.svg)](http://opensource.org/licenses/MIT)
 
-This plug-in allows using glTF models as plug-ins in [XML3D](http://xml3d.org) scenes.
+This plug-in allows using glTF models as configurable assets in [XML3D](http://xml3d.org) scenes.
 
 __[Examples](http://xml3d.github.io/xml3d-gltf-plugin/examples/)__
 
