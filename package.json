@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/xml3d/xml3d-gltf-plugin",
   "dependencies": {
-    "gltf-walker": "0.2.0",
+    "gltf-walker": "0.2.1",
     "q": "^1.4.1"
   },
   "devDependencies": {

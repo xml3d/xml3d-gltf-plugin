@@ -626,7 +626,6 @@
         this.orientation = XML3D.Quat.fromBasis(basisX, basisY, basisZ);
 
         if (distance !== undefined) {
-            console.log(distance, basisZ);
             var pointToPos = basisZ.scale(distance);
             this.position = point.add(pointToPos);
         }
