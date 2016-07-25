@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta property="og:title" content="XML3D glTF Plugin">
-    <meta property="og:image" content="http://xml3d.org/xml3d/material/images/xml3d-stl-plugin.png">
+    <meta property="og:image" content="http://xml3d.github.io/xml3d-gltf-plugin/examples/resources/xml3d-gltf-plugin.png">
     <meta property="og:description"
-          content="JavaScript plug-in for xml3d.js to use glTF models as external mesh references.">
+          content="JavaScript plug-in for xml3d.js to use glTF models as external assets.">
 
     <link rel="stylesheet" type="text/css" media="all" href="./public/style/normalize.css">
     <link rel="stylesheet" type="text/css" media="all" href="./public/style/foundation.css">
@@ -47,12 +47,7 @@
     </nav>
 </div>
 <xml3d style="width: 100%; height: 100%; background-color:rgb(65,65,65);">
-    <defs>
-        <material id="mat" model="urn:xml3d:material:phong">
-            <float name="ambientIntensity">0.2</float>
-            <float name="specularColor">0.8 0.8 0.8</float>
-        </material>
-    </defs>
+    <!-- Define two lights --->
     <group style="transform: rotate3d(1, 0, 0, -45deg);">
         <light model="urn:xml3d:light:directional">
             <float3 name="intensity">0.7 0.7 0.7</float3>
@@ -63,8 +58,9 @@
             <float3 name="intensity">0.6 0.6 0.7</float3>
         </light>
     </group>
-    <!--<model src="./resources/boxTextured/glTF/CesiumTexturedBoxTest.gltf"></model>-->
-    <model src="resources/gearbox_assy/glTF/gearbox_assy.gltf"></model>
+
+    <!-- Reference a glTF asset -->
+    <model src="resources/CesiumMilkTruck/glTF/CesiumMilkTruck.gltf"></model>
 </xml3d>
 <div style="position: absolute; top:0; left: 0">
     <a href="#" data-dropdown="drop" class="button">glTF Model &raquo;</a>
